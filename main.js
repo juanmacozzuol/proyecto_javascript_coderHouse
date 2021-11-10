@@ -16,9 +16,11 @@ let validacion=[0,0,0,0,0,0];
     while((validacion[0]+validacion[1]+validacion[2]+validacion[3]+validacion[4]+validacion[5])!=6){
         let at= prompt("Los valores disponibles son:" + atributos +"\nDonde quiere asignar el:" + atributos[0] +"\n 1.Fuerza(STR)\n2.Destreza(DEX)\n3.Constitución(CON)\n4.Inteligencia(INT)\n5.Sabiduría(WIS)\n6.Carisma(CHA)");
 
-        switch(parseInt(at)){
+        switch(at.toLowerCase()){
 
-            case 1:
+            case "1":
+            case "fuerza":
+            case "str":
 
                 if(validacion[0]==0){
 
@@ -35,7 +37,9 @@ let validacion=[0,0,0,0,0,0];
                 }
             break;
 
-            case 2:
+            case "2":
+            case "destreza":
+            case "dex":
 
                 if(validacion[1]==0){
 
@@ -52,7 +56,9 @@ let validacion=[0,0,0,0,0,0];
                 }
             break;
            
-            case 3:
+            case "3":
+            case "constitución":
+            case "con":
 
                 if(validacion[2]==0){
 
@@ -68,7 +74,9 @@ let validacion=[0,0,0,0,0,0];
 
                 }
             break;
-            case 4:
+            case "4":
+            case "inteligencia":
+            case "int":
 
                 if(validacion[3]==0){
 
@@ -84,7 +92,9 @@ let validacion=[0,0,0,0,0,0];
 
                 }
             break;
-            case 5:
+            case "5":
+            case "sabiduría":
+            case "wis":
 
                 if(validacion[4]==0){
 
@@ -100,7 +110,9 @@ let validacion=[0,0,0,0,0,0];
 
                 }
             break;
-            case 6:
+            case "6":
+            case "carisma":
+            case "cha":
 
                 if(validacion[5]==0){
 
@@ -147,35 +159,41 @@ function stats(race)
   
 
     //Cada raza tiene incrementos en diferentes puntajes de habilidad
-    switch(parseInt(race))
+    switch(race.toLowerCase())
     
     {
 
-        case 1:
+        case "1":
+        case "dragonborn":
         character1.atributos[0]=2;
         character1.atributos[5]=1;
         character1.raza="Dragonborn";
         character1.subraza="N/A";
         break;
         
-        case 2:
+        case "2":
+        case "dwarf":
         character1.atributos[2]=2;
         character1.raza="Dwarf";
         //Algunas razas ademas tiene subrazas con diferentes incrementos de habilidad (para es toda la segunda tanda de switchs)
         let subraced=prompt("Elija una sub-raza:\n 1.Hill Dwarf\n 2.Mountain Dwarf \n 3.Underdark Dwarf");
         
-            switch(parseInt(subraced)){
-            case 1:
+            switch(subraced.toLowerCase()){
+            case "1":
+            case "hill dwarf":
                 character1.atributos[4]=1;
                 character1.subraza="Hill Dwarf";
             break;
                 
-            case 2:
+            case "2":
+            case "mountain dwarf":
                 character1.atributos[0]=2;
                 character1.subraza="Mountain Dwarf";
             break;
 
-            case 3:
+            case "3":
+            case "underdark dwarf":
+
                 character1.atributos[0]=1;
                 character1.subraza="Underdark Dwarf";
             break;
@@ -188,22 +206,25 @@ function stats(race)
 
         break;
         
-        case 3:
+        case "3":
             character1.atributos[1]=2;
             character1.raza="Elf";
             let subracee=prompt("Elija una sub-raza:\n 1.High Elf\n 2.Wood Elf \n 3.Dark Elf");
-            switch(parseInt(subracee)){
-            case 1:
+            switch(subracee){
+            case "1":
+            case "high elf":
                 character1.atributos[3]=1;
                 character1.subraza="High Elf";
             break;
                 
-            case 2:
+            case "2":
+            case "wood elf":
                 character1.atributos[4]=1;
                 character1.subraza="Wood Elf";
             break;
 
-            case 3:
+            case "3":
+            case "dark elf":
                 character1.atributos[5]=1;
                 character1.subraza="Dark Elf";
             break;
@@ -215,17 +236,20 @@ function stats(race)
             }
         break;
         
-        case 4:
+        case "4":
+        case "gnome":
             character1.atributos[3]=2;
             character1.raza="Gnome";
             let subraceg=prompt("Elija una sub-raza:\n 1.Forest Gnome\n 2.Rock Gnome");
-            switch(parseInt(subraceg)){
-            case 1:
+            switch(subraceg.toLowerCase()){
+            case "1":
+            case "forest gnome":
                 character1.atributos[1]=1;
                 character1.subraza="Forest Gnome";
             break;
                 
-            case 2:
+            case "2":
+            case "rock gnome":
                 character1.atributos[2]=1;
                 character1.subraza="Rock Gnome";
             break;
@@ -238,17 +262,20 @@ function stats(race)
         
         break;
         
-        case 5:
+        case "5":
+        case "halfling":
             character1.atributos[1]=2;
             character1.raza="Halfling";
             let subraceh=prompt("Elija una sub-raza:\n 1.Lightfoot Halfling\n 2.Stout Halfling");
-            switch(parseInt(subraceh)){
-            case 1:
+            switch(subraceh.toLowerCase()){
+            case "1":
+            case "lightfoot halfling":
                 character1.atributos[5]=1;
                 character1.subraza="Lightfoot Halfling";
             break;
                 
-            case 2:
+            case "2":
+            case "stout halfling":
                 character1.atributos[2]=1;
                 character1.subraza="Stout Halfling";
             break;
@@ -260,14 +287,16 @@ function stats(race)
             }
         break;
         
-        case 6:
+        case "6":
+        case "half-orc":
             character1.raza="Half-Orc";
             character1.subraza="N/A";
             character1.atributos[0]=2;
             character1.atributos[2]=1;
         break;
         
-        case 7:
+        case "7":
+        case "human":
             character1.raza="Human";
             character1.subraza="N/A";
             character1.atributos[0]=1;
@@ -279,7 +308,8 @@ function stats(race)
         
         break;
         
-        case 8:
+        case "8":
+        case "tiefling":
             character1.raza="Tiefling";
             character1.subraza="N/A";
             character1.atributos[5]=2;
