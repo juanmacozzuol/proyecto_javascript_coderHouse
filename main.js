@@ -1,9 +1,5 @@
 
 
-
-
-
-/*
 class character{
 constructor(raza,subraza,atributos=[]){
     this.raza=raza;
@@ -349,4 +345,3 @@ alert("Tu raza es: " + character1.raza);
 alert("Tu subraza es: " + character1.subraza);
 alert("STR:" + character1.atributos[0] +"\n" + "DEX:" + character1.atributos[1] +"\n" + "CON:" + character1.atributos[2] +"\n" + "INT:" + character1.atributos[3] +"\n" + "WIS:" + character1.atributos[4] +"\n" + "CHA:" + character1.atributos[5] +"\n");
 
-*/
