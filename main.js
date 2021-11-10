@@ -11,7 +11,7 @@ constructor(raza,subraza,atributos=[]){
 
 asignarStats(atributos=[]){
 let validacion=[0,0,0,0,0,0];
-alert();
+
 
     while((validacion[0]+validacion[1]+validacion[2]+validacion[3]+validacion[4]+validacion[5])!=6){
         let at= prompt("Los valores disponibles son:" + atributos +"\nDonde quiere asignar el:" + atributos[0] +"\n 1.Fuerza(STR)\n2.Destreza(DEX)\n3.Constitución(CON)\n4.Inteligencia(INT)\n5.Sabiduría(WIS)\n6.Carisma(CHA)");
