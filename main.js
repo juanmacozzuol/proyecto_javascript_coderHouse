@@ -129,6 +129,11 @@ let validacion=[0,0,0,0,0,0];
                 }
             break;
 
+            default:
+                alert("Valor incorrecto, intente de nuevo.");
+            
+            break;
+
 
         }
 
@@ -155,169 +160,187 @@ const character1 = new character(0,0,[0,0,0,0,0,0]);
 function stats(race)
 {
 
+    let validacion=0;
 
-  
+    while(validacion!=1){
 
-    //Cada raza tiene incrementos en diferentes puntajes de habilidad
-    switch(race.toLowerCase())
+
     
-    {
 
-        case "1":
-        case "dragonborn":
-        character1.atributos[0]=2;
-        character1.atributos[5]=1;
-        character1.raza="Dragonborn";
-        character1.subraza="N/A";
-        break;
+        //Cada raza tiene incrementos en diferentes puntajes de habilidad
+        switch(race.toLowerCase())
         
-        case "2":
-        case "dwarf":
-        character1.atributos[2]=2;
-        character1.raza="Dwarf";
-        //Algunas razas ademas tiene subrazas con diferentes incrementos de habilidad (para es toda la segunda tanda de switchs)
-        let subraced=prompt("Elija una sub-raza:\n 1.Hill Dwarf\n 2.Mountain Dwarf \n 3.Underdark Dwarf");
-        
-            switch(subraced.toLowerCase()){
+        {
+
             case "1":
-            case "hill dwarf":
-                character1.atributos[4]=1;
-                character1.subraza="Hill Dwarf";
-            break;
-                
-            case "2":
-            case "mountain dwarf":
-                character1.atributos[0]=2;
-                character1.subraza="Mountain Dwarf";
-            break;
-
-            case "3":
-            case "underdark dwarf":
-
-                character1.atributos[0]=1;
-                character1.subraza="Underdark Dwarf";
-            break;
-
-            default:
-                character1.subraza="N/A";
-            break;
-
-            }
-
-        break;
-        
-        case "3":
-            character1.atributos[1]=2;
-            character1.raza="Elf";
-            let subracee=prompt("Elija una sub-raza:\n 1.High Elf\n 2.Wood Elf \n 3.Dark Elf");
-            switch(subracee){
-            case "1":
-            case "high elf":
-                character1.atributos[3]=1;
-                character1.subraza="High Elf";
-            break;
-                
-            case "2":
-            case "wood elf":
-                character1.atributos[4]=1;
-                character1.subraza="Wood Elf";
-            break;
-
-            case "3":
-            case "dark elf":
-                character1.atributos[5]=1;
-                character1.subraza="Dark Elf";
-            break;
-
-            default:
-                character1.subraza="N/A";
-            break;
-
-            }
-        break;
-        
-        case "4":
-        case "gnome":
-            character1.atributos[3]=2;
-            character1.raza="Gnome";
-            let subraceg=prompt("Elija una sub-raza:\n 1.Forest Gnome\n 2.Rock Gnome");
-            switch(subraceg.toLowerCase()){
-            case "1":
-            case "forest gnome":
-                character1.atributos[1]=1;
-                character1.subraza="Forest Gnome";
-            break;
-                
-            case "2":
-            case "rock gnome":
-                character1.atributos[2]=1;
-                character1.subraza="Rock Gnome";
-            break;
-
-            default:
-                character1.subraza="N/A";
-            break;
-
-            }
-        
-        break;
-        
-        case "5":
-        case "halfling":
-            character1.atributos[1]=2;
-            character1.raza="Halfling";
-            let subraceh=prompt("Elija una sub-raza:\n 1.Lightfoot Halfling\n 2.Stout Halfling");
-            switch(subraceh.toLowerCase()){
-            case "1":
-            case "lightfoot halfling":
-                character1.atributos[5]=1;
-                character1.subraza="Lightfoot Halfling";
-            break;
-                
-            case "2":
-            case "stout halfling":
-                character1.atributos[2]=1;
-                character1.subraza="Stout Halfling";
-            break;
-
-            default:
-                character1.subraza="N/A";
-            break;
-
-            }
-        break;
-        
-        case "6":
-        case "half-orc":
-            character1.raza="Half-Orc";
-            character1.subraza="N/A";
+            case "dragonborn":
             character1.atributos[0]=2;
-            character1.atributos[2]=1;
-        break;
-        
-        case "7":
-        case "human":
-            character1.raza="Human";
-            character1.subraza="N/A";
-            character1.atributos[0]=1;
-            character1.atributos[1]=1;
-            character1.atributos[2]=1;
-            character1.atributos[3]=1;
-            character1.atributos[4]=1;
             character1.atributos[5]=1;
-        
-        break;
-        
-        case "8":
-        case "tiefling":
-            character1.raza="Tiefling";
+            character1.raza="Dragonborn";
             character1.subraza="N/A";
-            character1.atributos[5]=2;
-            character1.atributos[3]=1;
-        break;
+            validacion=1;
+            break;
+            
+            case "2":
+            case "dwarf":
+            character1.atributos[2]=2;
+            character1.raza="Dwarf";
+            //Algunas razas ademas tiene subrazas con diferentes incrementos de habilidad (para es toda la segunda tanda de switchs)
+            let subraced=prompt("Elija una sub-raza:\n 1.Hill Dwarf\n 2.Mountain Dwarf \n 3.Underdark Dwarf");
+            
+                switch(subraced.toLowerCase()){
+                case "1":
+                case "hill dwarf":
+                    character1.atributos[4]=1;
+                    character1.subraza="Hill Dwarf";
+                break;
+                    
+                case "2":
+                case "mountain dwarf":
+                    character1.atributos[0]=2;
+                    character1.subraza="Mountain Dwarf";
+                break;
+
+                case "3":
+                case "underdark dwarf":
+
+                    character1.atributos[0]=1;
+                    character1.subraza="Underdark Dwarf";
+                break;
+
+                default:
+                    character1.subraza="N/A";
+                break;
+
+                }
+                validacion=1;
+
+            break;
+            
+            case "3":
+                character1.atributos[1]=2;
+                character1.raza="Elf";
+                let subracee=prompt("Elija una sub-raza:\n 1.High Elf\n 2.Wood Elf \n 3.Dark Elf");
+                switch(subracee){
+                case "1":
+                case "high elf":
+                    character1.atributos[3]=1;
+                    character1.subraza="High Elf";
+                break;
+                    
+                case "2":
+                case "wood elf":
+                    character1.atributos[4]=1;
+                    character1.subraza="Wood Elf";
+                break;
+
+                case "3":
+                case "dark elf":
+                    character1.atributos[5]=1;
+                    character1.subraza="Dark Elf";
+                break;
+
+                default:
+                    character1.subraza="N/A";
+                break;
+
+                }
+                validacion=1;
+            break;
+            
+            case "4":
+            case "gnome":
+                character1.atributos[3]=2;
+                character1.raza="Gnome";
+                let subraceg=prompt("Elija una sub-raza:\n 1.Forest Gnome\n 2.Rock Gnome");
+                switch(subraceg.toLowerCase()){
+                case "1":
+                case "forest gnome":
+                    character1.atributos[1]=1;
+                    character1.subraza="Forest Gnome";
+                break;
+                    
+                case "2":
+                case "rock gnome":
+                    character1.atributos[2]=1;
+                    character1.subraza="Rock Gnome";
+                break;
+
+                default:
+                    character1.subraza="N/A";
+                break;
+
+                }
+                validacion=1;
+            
+            break;
+            
+            case "5":
+            case "halfling":
+                character1.atributos[1]=2;
+                character1.raza="Halfling";
+                let subraceh=prompt("Elija una sub-raza:\n 1.Lightfoot Halfling\n 2.Stout Halfling");
+                switch(subraceh.toLowerCase()){
+                case "1":
+                case "lightfoot halfling":
+                    character1.atributos[5]=1;
+                    character1.subraza="Lightfoot Halfling";
+                break;
+                    
+                case "2":
+                case "stout halfling":
+                    character1.atributos[2]=1;
+                    character1.subraza="Stout Halfling";
+                break;
+
+                default:
+                    character1.subraza="N/A";
+                break;
+
+                }
+                validacion=1;
+            break;
+            
+            case "6":
+            case "half-orc":
+                character1.raza="Half-Orc";
+                character1.subraza="N/A";
+                character1.atributos[0]=2;
+                character1.atributos[2]=1;
+                validacion=1;
+            break;
+            
+            case "7":
+            case "human":
+                character1.raza="Human";
+                character1.subraza="N/A";
+                character1.atributos[0]=1;
+                character1.atributos[1]=1;
+                character1.atributos[2]=1;
+                character1.atributos[3]=1;
+                character1.atributos[4]=1;
+                character1.atributos[5]=1;
+                validacion=1;
+            
+            break;
+            
+            case "8":
+            case "tiefling":
+                character1.raza="Tiefling";
+                character1.subraza="N/A";
+                character1.atributos[5]=2;
+                character1.atributos[3]=1;
+                validacion=1;
+            break;
+                    
+            default:
+                alert("Opción incorrecta. Intente nuevamente.");
+                race=prompt("Elija una raza:\n 1.Dragonborn\n 2.Dwarf \n 3.Elf \n 4.Gnome \n 5.Halfling\n 6.Half-Orc\n 7.Human\n 8.Tiefling");
+               
                 
-        default:
-        break;
+                
+            break;
+        }
     }
     
 }   
