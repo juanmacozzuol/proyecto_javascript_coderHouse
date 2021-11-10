@@ -4,8 +4,7 @@ class character{
 constructor(raza,subraza,atributos=[]){
     this.raza=raza;
     this.subraza=subraza;
-    this.atributos=atributos;
-    
+    this.atributos=atributos;  
 }
 
 
