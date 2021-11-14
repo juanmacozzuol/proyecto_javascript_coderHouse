@@ -166,29 +166,32 @@ function stats(race)
 
     let validacion=0;
 
-    while(validacion!=1){
+   
 
 
-    
+        
 
         //Cada raza tiene incrementos en diferentes puntajes de habilidad
-        switch(race.toLowerCase())
+        switch(race)
         
         {
 
             case "1":
             case "dragonborn":
+               
                 character1.atributos[0]=2;
                 character1.atributos[5]=1;
                 character1.raza="Dragonborn";
                 character1.subraza="N/A";
-                validacion=1;
+                
+               
             break;
             
             case "2":
             case "dwarf":
                 character1.atributos[2]=2;
                 character1.raza="Dwarf";
+                
                 //Algunas razas ademas tiene subrazas con diferentes incrementos de habilidad (para es toda la segunda tanda de switchs)
                 let subraced=prompt("Elija una Sub-Raza:\n1.Hill Dwarf\n2.Mountain Dwarf\n3.Underdark Dwarf\n4.Sin Sub-Raza");
                 let validaciond=0;
@@ -229,11 +232,12 @@ function stats(race)
 
                     }
                 }
-                validacion=1;
+                
 
             break;
             
             case "3":
+            case "elf":
                 character1.atributos[1]=2;
                 character1.raza="Elf";
                 let subracee=prompt("Elija una sub-raza:\n1.High Elf\n2.Wood Elf \n3.Dark Elf\n4.Sin Sub-Raza");
@@ -273,7 +277,7 @@ function stats(race)
 
                     }
                 }   
-                validacion=1;
+                
             break;
             
             case "4":
@@ -309,7 +313,7 @@ function stats(race)
                         break;
 
                     }
-                    validacion=1;
+                   
                 }
             break;
             
@@ -347,7 +351,7 @@ function stats(race)
 
                     }
                 }
-                validacion=1;
+               
             break;
             
             case "6":
@@ -356,7 +360,7 @@ function stats(race)
                 character1.subraza="N/A";
                 character1.atributos[0]=2;
                 character1.atributos[2]=1;
-                validacion=1;
+               
             break;
             
             case "7":
@@ -369,7 +373,7 @@ function stats(race)
                 character1.atributos[3]=1;
                 character1.atributos[4]=1;
                 character1.atributos[5]=1;
-                validacion=1;
+                
             
             break;
             
@@ -379,18 +383,16 @@ function stats(race)
                 character1.subraza="N/A";
                 character1.atributos[5]=2;
                 character1.atributos[3]=1;
-                validacion=1;
+                
             break;
                     
             default:
-                alert("Opción incorrecta. Intente nuevamente.");
-                race=prompt("Elija una raza:\n1.Dragonborn\n2.Dwarf\n 3.Elf\n 4.Gnome\n 5.Halfling\n6.Half-Orc\n7.Human\n8.Tiefling");
                
                 
                 
             break;
         }
-    }
+    
     
 }   
 
@@ -432,16 +434,51 @@ for(let j=0;j<6;j++){
 }
 
 
- 
   
 //Cada Personaje de D&D tiene una raza
-let raza=prompt("Elija una raza:\n1.Dragonborn\n2.Dwarf\n3.Elf\n4.Gnome\n5.Halfling\n6.Half-Orc\n7.Human\n8.Tiefling");
-stats(raza);
-ordenarStats(valores);
-character1.asignarStats(valores);
+var raza= document.getElementById("raza");
+
+raza.onchange =() =>{
+
+    let raza= document.getElementById("raza").value;
+    
+    
+    
+    stats(raza);
+
+    if(raza!="Choose a race")
+    {
+        let titulo2 = document.createElement("h2");
+        titulo2.innerHTML="Raza:" +character1.raza;
+        document.body.appendChild(titulo2);
+
+        let titulo3 = document.createElement("h3");
+        titulo3.innerHTML="Subraza:" +character1.subraza;
+        document.body.appendChild(titulo3);
+    }
+}
 
 
 
 
-alert("Tu raza es: " + character1.raza + "\nTu subraza es: " + character1.subraza + "\nSTR:" + character1.atributos[0] +"\n" + "DEX:" + character1.atributos[1] +"\n" + "CON:" + character1.atributos[2] +"\n" + "INT:" + character1.atributos[3] +"\n" + "WIS:" + character1.atributos[4] +"\n" + "CHA:" + character1.atributos[5] +"\n");
+
+//prompt("Elija una raza:\n1.Dragonborn\n2.Dwarf\n3.Elf\n4.Gnome\n5.Halfling\n6.Half-Orc\n7.Human\n8.Tiefling");
+//stats(raza);
+//ordenarStats(valores);
+///character1.asignarStats(valores);
+
+
+
+
+
+
+let stat = document.createElement("p");
+stat.innerHTML="STR:" + character1.atributos[0] + "\nDEX:" + character1.atributos[1]  + "\nCON:" + character1.atributos[2]  + "\nINT:" + character1.atributos[3]  + "\nWIS:" + character1.atributos[4]  + "\nCHA:" + character1.atributos[5];
+document.body.appendChild(stat);
+
+
+
+
+
+//alert("Tu raza es: " + character1.raza + "\nTu subraza es: " + character1.subraza + "\nSTR:" + character1.atributos[0] +"\n" + "DEX:" + character1.atributos[1] +"\n" + "CON:" + character1.atributos[2] +"\n" + "INT:" + character1.atributos[3] +"\n" + "WIS:" + character1.atributos[4] +"\n" + "CHA:" + character1.atributos[5] +"\n");
 
