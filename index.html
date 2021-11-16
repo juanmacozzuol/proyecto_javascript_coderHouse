@@ -5,51 +5,81 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="mycss.css">
+    <link rel="stylesheet" href="mycss/mycss.css">
     
     <title>Clase 5</title>
 
 </head>
 <body class="container-fluid">
     
-<div class="container-fluid bordes row uno">
+<div class="container-fluid row bordes ">
     <h1>Character Generator
     </h1>
-    
+    <div class="container-fluid  uno bordes">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="race-tab" data-bs-toggle="tab" data-bs-target="#race" type="button" role="tab" aria-controls="race" aria-selected="true">Race & Attributes</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="class-tab" data-bs-toggle="tab" data-bs-target="#class" type="button" role="tab" aria-controls="class" aria-selected="false">Class</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="equipment-tab" data-bs-toggle="tab" data-bs-target="#equipment" type="button" role="tab" aria-controls="equipment" aria-selected="false">Equipment</button>
+        </li>
+      </ul>
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="race" role="tabpanel" aria-labelledby="race-tab"> 
+            <form id="form1"action="">
+            <select class="form-select"name="" id="raza">
 
-        <div class="container-fluid row bordes dos">
-            <form action="">
-                <select class="form-select"name="" id="raza">
-
-                    <option selected>Choose a race</option>
-                    <option  value="dragonborn">Dragonborn</option>
-                    <option value="dwarf">Dwarf</option>
-                    <option value="elf">Elf</option>
-                    <option value="gnome">Gnome</option>
-                    <option value="halfling">Halfling</option>
-                    <option value="half-orc">Half-Orc</option>
-                    <option value="human">Human</option>
-                    <option value="tiefling">Tiefling</option>
-                        
-                </select>
-
-
-                <select class="form-select"name="" id="subraza">
-
-                    <option selected>Choose a subrace</option>
+                <option selected>Choose a race</option>
+                <option  value="dragonborn">Dragonborn</option>
+                <option value="dwarf">Dwarf</option>
+                <option value="elf">Elf</option>
+                <option value="gnome">Gnome</option>
+                <option value="halfling">Halfling</option>
+                <option value="half-orc">Half-Orc</option>
+                <option value="human">Human</option>
+                <option value="tiefling">Tiefling</option>
                     
-                        
-                </select>
+            </select>
 
-            </form>
-            
+
+            <select class="form-select" name="" id="subraza">
+
+                <option selected>Choose a subrace</option>        
+            </select>
+            <!---
+            <label for="str">STR:</label>
+            <input type="number" id="str">
+            <label for="dex">DEX:</label>
+            <input type="number" id="dex">
+            <label for="con">CON:</label>
+            <input type="number" id="con">
+            <label for="int">INT:</label>
+            <input type="number" id="int">
+            <label for="wis">WIS:</label>
+            <input type="number" id="wis">
+            <label for="cha">CHA:</label>
+            <input type="number" id="cha">
+                -->
+
+        </form>
         </div>
-        <div class="container-fluid row bordes dos">
+        <div class="tab-pane fade" id="class" role="tabpanel" aria-labelledby="class-tab">...</div>
+        <div class="tab-pane fade" id="equipmen" role="tabpanel" aria-labelledby="equipment-tab">...</div>
+      </div>
+
+
+           
+        </div>
+        <div class="container-fluid uno  bordes">
 
         </div>
 
     
 </div>
+
 
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="main.js"></script>

@@ -176,213 +176,195 @@ function stats(race)
         
         {
 
-            case "1":
             case "dragonborn":
                
                 character1.atributos[0]=2;
                 character1.atributos[5]=1;
                 character1.raza="Dragonborn";
-                character1.subraza="N/A";
+           
+                let subracedr=["Sin Subraza"];
+                var contenido;
+                contenido ="<select>";
+                contenido +="<option selected>Choose a subrace</option>"
+    
+                for (let subraza of subracedr){
+    
+                    contenido += "<option value= '"+subraza.toLowerCase()+"'  >" +subraza+ "</option>" ;
+
+    
+                }
+                contenido += "</select>";
+                document.getElementById("subraza").innerHTML=contenido;
                 
                
             break;
             
-            case "2":
             case "dwarf":
+                
+                //Algunas razas ademas tiene subrazas con diferentes incrementos de habilidad (para es toda la segunda tanda de switchs)
                 character1.atributos[2]=2;
                 character1.raza="Dwarf";
                 
                 //Algunas razas ademas tiene subrazas con diferentes incrementos de habilidad (para es toda la segunda tanda de switchs)
-                let subraced=prompt("Elija una Sub-Raza:\n1.Hill Dwarf\n2.Mountain Dwarf\n3.Underdark Dwarf\n4.Sin Sub-Raza");
-                let validaciond=0;
+                let subraced=["Hill Dwarf","Mountain Dwarf","Underdark Dwarf","Sin Subraza"];
+                var contenido;
+                contenido ="<select>";
+                contenido +="<option selected>Choose a subrace</option>"
+    
+                for (let subraza of subraced){
+    
+                    contenido += "<option value= '"+subraza.toLowerCase()+"'  >" +subraza+ "</option>" ;
 
-                while(validaciond!=1){
-                    switch(subraced.toLowerCase()){
-                        case "1":
-                        case "hill dwarf":
-                            character1.atributos[4]=1;
-                            character1.subraza="Hill Dwarf";
-                            validaciond=1;
-                        break;
-                            
-                        case "2":
-                        case "mountain dwarf":
-                            character1.atributos[0]=2;
-                            character1.subraza="Mountain Dwarf";
-                            validaciond=1;
-                        break;
-
-                        case "3":
-                        case "underdark dwarf":
-
-                            character1.atributos[0]=1;
-                            character1.subraza="Underdark Dwarf";
-                            validaciond=1;
-                        break;
-
-                        case "4":
-                        case "sin sub-raza":
-                            character1.subraza="N/A";
-                            validaciond=1;
-                        break;
-                        default:
-                            alert("Opción incorrecta. Intente nuevamente.");
-                            subraced=prompt("Elija una Sub-Raza:\n1.Hill Dwarf\n2.Mountain Dwarf\n3.Underdark Dwarf\n4.Sin Sub-Raza");
-                        break;
-
-                    }
+    
                 }
+                contenido += "</select>";
+                document.getElementById("subraza").innerHTML=contenido;
+               
+
+
+                
                 
 
             break;
             
-            case "3":
+
             case "elf":
                 character1.atributos[1]=2;
                 character1.raza="Elf";
-                let subracee=prompt("Elija una sub-raza:\n1.High Elf\n2.Wood Elf \n3.Dark Elf\n4.Sin Sub-Raza");
-                let validacione=0;
-                while(validacione!=1){
-                    switch(subracee){
-                        case "1":
-                        case "high elf":
-                            character1.atributos[3]=1;
-                            character1.subraza="High Elf";
-                            validacione=1;
-                        break;
-                            
-                        case "2":
-                        case "wood elf":
-                            character1.atributos[4]=1;
-                            character1.subraza="Wood Elf";
-                            validacione=1;
-                        break;
+                let subracee=["High Elf","Wood Elf","Dark Elf","Sin Subraza"];
 
-                        case "3":
-                        case "dark elf":
-                            character1.atributos[5]=1;
-                            character1.subraza="Dark Elf";
-                            validacione=1;
-                        break;
-                        case "4":
-                        case "sin sub-raza":
-                            character1.subraza="N/A";
-                            validacione=1;
-                        break;
-                        default:
-                            alert("Opción incorrecta. Intente nuevamente.");
-                            subracee=prompt("Elija una sub-raza:\n1.High Elf\n2.Wood Elf \n3.Dark Elf\n4.Sin Sub-Raza");
-                        break;
+                var contenido;
+                contenido ="<select>";
+                contenido +="<option selected>Choose a subrace</option>"
+    
+                for (let subraza of subracee){
+    
+                    contenido += "<option value= '"+subraza.toLowerCase()+"'  >" +subraza+ "</option>" ;
 
-
-                    }
-                }   
+    
+                }
+                contenido += "</select>";
+                document.getElementById("subraza").innerHTML=contenido;
+                   
+                   
                 
             break;
             
-            case "4":
+
             case "gnome":
                 character1.atributos[3]=2;
                 character1.raza="Gnome";
-                let subraceg=prompt("Elija una sub-raza:\n1.Forest Gnome\n2.Rock Gnome\n3.Sin Sub-Raza");
-                validaciong=0;
-                while(validaciong!=1){
-                    switch(subraceg.toLowerCase()){
-                        case "1":
-                        case "forest gnome":
-                            character1.atributos[1]=1;
-                            character1.subraza="Forest Gnome";
-                            validaciong=1;
-                        break;
-                            
-                        case "2":
-                        case "rock gnome":
-                            character1.atributos[2]=1;
-                            character1.subraza="Rock Gnome";
-                            validaciong=1;
-                        break;
+                let subraceg=["Forest Gnome","Rock Gnome","Sin Subraza"];
 
-                        case "3":
-                        case "sin sub-raza":
-                            character1.subraza="N/A";
-                            validaciong=1;
-                        break;
-                        default:
-                            alert("Opción incorrecta. Intente nuevamente.");
-                            subraceg=prompt("Elija una sub-raza:\n1.Forest Gnome\n2.Rock Gnome\n3.Sin Sub-Raza");
-                        break;
+                var contenido;
+                contenido ="<select>";
+                contenido +="<option selected>Choose a subrace</option>"
+    
+                for (let subraza of subraceg){
+    
+                    contenido += "<option value= '"+subraza.toLowerCase()+"'  >" +subraza+ "</option>" ;
 
-                    }
-                   
+    
                 }
+                contenido += "</select>";
+                document.getElementById("subraza").innerHTML=contenido;
+                  
+                
             break;
             
-            case "5":
+
             case "halfling":
                 character1.atributos[1]=2;
                 character1.raza="Halfling";
-                let subraceh=prompt("Elija una sub-raza:\n1.Lightfoot Halfling\n2.Stout Halfling\n3.Sin Sub-Raza");
-                let validacionh=0;
-                while(validacionh!=1){
-                    switch(subraceh.toLowerCase()){
-                        case "1":
-                        case "lightfoot halfling":
-                            character1.atributos[5]=1;
-                            character1.subraza="Lightfoot Halfling";
-                            validacionh=1;
-                        break;
-                            
-                        case "2":
-                        case "stout halfling":
-                            character1.atributos[2]=1;
-                            character1.subraza="Stout Halfling";
-                            validacionh=1;
-                        break;
+                let subraceh=["Lightfoot Halfling","Stout Halfling","Sin Subraza"];
 
-                        case "3":
-                        case "sin sub-raza":
-                            character1.subraza="N/A";
-                            validacionh=1;
-                        break;
-                        default:
-                            alert("Opción incorrecta. Intente nuevamente.");
-                            subraceh=prompt("Elija una sub-raza:\n1.Lightfoot Halfling\n2.Stout Halfling\n3.Sin Sub-Raza");
-                        break;
 
-                    }
+
+                var contenido;
+                contenido ="<select>";
+                contenido +="<option selected>Choose a subrace</option>"
+    
+                for (let subraza of subraceh){
+    
+                    contenido += "<option value= '"+subraza.toLowerCase()+"'  >" +subraza+ "</option>" ;
+                    
+
+    
                 }
+                contenido += "</select>";
+                document.getElementById("subraza").innerHTML=contenido;
+               
                
             break;
             
-            case "6":
+
             case "half-orc":
                 character1.raza="Half-Orc";
-                character1.subraza="N/A";
                 character1.atributos[0]=2;
                 character1.atributos[2]=1;
+                let subraceha=["Sin Subraza"];
+                var contenido;
+                contenido ="<select>";
+                contenido +="<option selected>Choose a subrace</option>"
+    
+                for (let subraza of subraceha){
+    
+                    contenido += "<option value= '"+subraza.toLowerCase()+"'  >" +subraza+ "</option>" ;
+
+    
+                }
+                contenido += "</select>";
+                document.getElementById("subraza").innerHTML=contenido;
+
+
                
             break;
             
-            case "7":
+
             case "human":
                 character1.raza="Human";
-                character1.subraza="N/A";
                 character1.atributos[0]=1;
                 character1.atributos[1]=1;
                 character1.atributos[2]=1;
                 character1.atributos[3]=1;
                 character1.atributos[4]=1;
                 character1.atributos[5]=1;
+                let subracehu=["Sin Subraza"];
+                var contenido;
+                contenido ="<select>";
+                contenido +="<option selected>Choose a subrace</option>"
+    
+                for (let subraza of subracehu){
+    
+                    contenido += "<option value= '"+subraza.toLowerCase()+"'  >" +subraza+ "</option>" ;
+
+    
+                }
+                contenido += "</select>";
+                document.getElementById("subraza").innerHTML=contenido;
+
                 
             
             break;
             
-            case "8":
+
             case "tiefling":
                 character1.raza="Tiefling";
-                character1.subraza="N/A";
                 character1.atributos[5]=2;
                 character1.atributos[3]=1;
+                let subracet=["Sin Subraza"];
+                var contenido;
+                contenido ="<select>";
+                contenido +="<option selected>Choose a subrace</option>"
+    
+                for (let subraza of subracet){
+    
+                    contenido += "<option value= '  " + subraza.toLowerCase() + " '  >" +subraza+ "</option>" ;
+
+    
+                }
+                contenido += "</select>";
+                document.getElementById("subraza").innerHTML=contenido;
                 
             break;
                     
@@ -396,12 +378,198 @@ function stats(race)
     
 }   
 
-    //Cada personaje tiene 6 puntajes de habilidad Fuerza(STR), Agilidad(DEX),Constitución(CON),Inteligencia(INT),Sabiduría(WIS),Carisma(CHA)
+
+
+
+  
+//Cada Personaje de D&D tiene una raza
+var raza= document.getElementById("raza");
+
+raza.onchange =() =>{
+
+    let raza= document.getElementById("raza").value;
+    
+    
+    
+    stats(raza);
+
+
+    if(val[1]==1)
+
+    {
+
+        let element= document.getElementsByTagName("h3");
+        element[0].parentNode.removeChild(element[0]);
+        val[1]=0;
+
+    }
+
+
+ 
+    if(raza!="Choose a race")
+    
+    {   
+
+        if(val[0]==1){
+
+            let element= document.getElementsByTagName("h2");
+            element[0].parentNode.removeChild(element[0]);
+
+
+        }
+
+
+        
+        let titulo2 = document.createElement("h2");
+        titulo2.innerHTML="Raza:" +character1.raza;
+        document.body.appendChild(titulo2);
+        val[0]=1;
+
+    }
+}
+
+
+var subraza= document.getElementById("subraza");
+
+subraza.onchange =() =>{
+
+    let subraza= document.getElementById("subraza").value;
+    
+    console.log(subraza);
+    
+
+    switch(subraza){
+
+        case "hill dwarf":
+            character1.atributos[4]=1;
+            character1.subraza="Hill Dwarf";
+            console.log(subraza);
+        break;
+            
+
+        case "mountain dwarf":
+            character1.atributos[0]=2;
+            character1.subraza="Mountain Dwarf";
+
+        break;
+
+
+        case "underdark dwarf":
+
+            character1.atributos[0]=1;
+            character1.subraza="Underdark Dwarf";
+
+        break;
+
+
+     
+        case "high elf":
+            character1.atributos[3]=1;
+            character1.subraza="High Elf";
+
+        break;
+            
+
+        case "wood elf":
+            character1.atributos[4]=1;
+            character1.subraza="Wood Elf";
+
+        break;
+
+
+        case "dark elf":
+            character1.atributos[5]=1;
+            character1.subraza="Dark Elf";
+
+        break;
+
+        case "forest gnome":
+            character1.atributos[1]=1;
+            character1.subraza="Forest Gnome";
+
+        break;
+            
+
+        case "rock gnome":
+            character1.atributos[2]=1;
+            character1.subraza="Rock Gnome";
+
+        break;
+
+
+        case "lightfoot halfling":
+            character1.atributos[5]=1;
+            character1.subraza="Lightfoot Halfling";
+
+        break;
+            
+
+        case "stout halfling":
+            character1.atributos[2]=1;
+            character1.subraza="Stout Halfling";
+
+        break;
+
+
+
+        case "sin subraza":
+            character1.subraza="N/A";
+
+        break;
+
+
+
+
+    }
+
+
+
+    if(subraza!="Choose a subrace")
+    {
+        
+        if(val[1]==1){
+
+            let elemento= document.getElementsByTagName("h3");
+            elemento[0].parentNode.removeChild(elemento[0]);
+
+        }
+
+
+        let titulo3 = document.createElement("h3");
+        titulo3.innerHTML="Subraza:" +character1.subraza;
+        document.body.appendChild(titulo3);
+        val[1]=1;
+    }
+}
+
+
+
+
+
+
+//ordenarStats(valores);
+//character1.asignarStats(valores);
+
+let roll = document.createElement("button");
+roll.innerHTML=("Roll the dice!");
+roll.setAttribute("id","roll");
+document.body.appendChild(roll);
+
+let rolling = document.getElementById("roll");
+rolling.onclick=()=>{ rolled()};
+
+var val=[0,0];
+var valu=0;
+
+function rolled(){
+
+        //Cada personaje tiene 6 puntajes de habilidad Fuerza(STR), Agilidad(DEX),Constitución(CON),Inteligencia(INT),Sabiduría(WIS),Carisma(CHA)
     //Una de las maneras de hacer esto es tirar 4 dados de 6 caras, descartar e valor mas bajo y sumar el resto
     let min = 1;
     let max= 6;
     var valores=[0,0,0,0,0,0];
-
+    
+    let stat = document.createElement("p");
 for(let j=0;j<6;j++){
 
     let dados=[0,0,0,0];
@@ -426,56 +594,25 @@ for(let j=0;j<6;j++){
   
 
     //Aca guardo la suma de los beneficios de raza, subraza y los dados random
-    //idealmente tendria que poder decidir el usuario que valor asignar a cada puntuacion pero todavia no resolvi eso
+
     valores[j]=dados[0]+dados[1]+dados[2]+dados[3];
       
        
 
 }
 
+if (valu>=1){
+    let elemento= document.getElementsByTagName("p");
+    elemento[0].parentNode.removeChild(elemento[0]);
 
-  
-//Cada Personaje de D&D tiene una raza
-var raza= document.getElementById("raza");
-
-raza.onchange =() =>{
-
-    let raza= document.getElementById("raza").value;
-    
-    
-    
-    stats(raza);
-
-    if(raza!="Choose a race")
-    {
-        let titulo2 = document.createElement("h2");
-        titulo2.innerHTML="Raza:" +character1.raza;
-        document.body.appendChild(titulo2);
-
-        let titulo3 = document.createElement("h3");
-        titulo3.innerHTML="Subraza:" +character1.subraza;
-        document.body.appendChild(titulo3);
-    }
 }
 
 
-
-
-
-//prompt("Elija una raza:\n1.Dragonborn\n2.Dwarf\n3.Elf\n4.Gnome\n5.Halfling\n6.Half-Orc\n7.Human\n8.Tiefling");
-//stats(raza);
-//ordenarStats(valores);
-///character1.asignarStats(valores);
-
-
-
-
-
-
-let stat = document.createElement("p");
-stat.innerHTML="STR:" + character1.atributos[0] + "\nDEX:" + character1.atributos[1]  + "\nCON:" + character1.atributos[2]  + "\nINT:" + character1.atributos[3]  + "\nWIS:" + character1.atributos[4]  + "\nCHA:" + character1.atributos[5];
+stat.innerHTML="STR:" + valores[0] + "\nDEX:" + valores[1]  + "\nCON:" + valores[2]  + "\nINT:" + valores[3]  + "\nWIS:" + valores[4]  + "\nCHA:" + valores[5];
 document.body.appendChild(stat);
+valu=1;
 
+}
 
 
 
