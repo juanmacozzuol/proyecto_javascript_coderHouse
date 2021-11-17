@@ -10,78 +10,139 @@
     <title>Clase 5</title>
 
 </head>
-<body class="container-fluid">
+<body class="container-fluid forest">
+        
+    <div class="container-fluid row bordes  ">
+        <h1>Character Generator </h1>
+        <div class="container-fluid  uno  bordes papyrus" id="pestañas">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="race-tab" data-bs-toggle="tab" data-bs-target="#race" type="button" role="tab" aria-controls="race" aria-selected="true">Race & Attributes</button>
+            </li>
+            <li class="nav-item" role="presentation">
+            <button class="nav-link" id="class-tab" data-bs-toggle="tab" data-bs-target="#class" type="button" role="tab" aria-controls="class" aria-selected="false">Class</button>
+            </li>
+            <li class="nav-item" role="presentation">
+            <button class="nav-link" id="equipment-tab" data-bs-toggle="tab" data-bs-target="#equipment" type="button" role="tab" aria-controls="equipment" aria-selected="false">Equipment</button>
+            </li>
+        </ul>
+        <div class="tab-content " id="myTabContent">
+            <div class="tab-pane fade show active " id="race" role="tabpanel" aria-labelledby="race-tab"> 
+                <form id="form1"action="" >
+                <select class="form-select"name="" id="raza">
+
+                    <option selected>Choose a race</option>
+                    <option  value="dragonborn">Dragonborn</option>
+                    <option value="dwarf">Dwarf</option>
+                    <option value="elf">Elf</option>
+                    <option value="gnome">Gnome</option>
+                    <option value="halfling">Halfling</option>
+                    <option value="half-orc">Half-Orc</option>
+                    <option value="human">Human</option>
+                    <option value="tiefling">Tiefling</option>
+                        
+                </select>
+
+
+                <select class="form-select" name="" id="subraza">
+
+                    <option selected>Choose a subrace</option>        
+                </select>
     
-<div class="container-fluid row bordes ">
-    <h1>Character Generator
-    </h1>
-    <div class="container-fluid  uno bordes">
-    <ul class="nav nav-tabs" id="myTab" role="tablist">
-        <li class="nav-item" role="presentation">
-          <button class="nav-link active" id="race-tab" data-bs-toggle="tab" data-bs-target="#race" type="button" role="tab" aria-controls="race" aria-selected="true">Race & Attributes</button>
-        </li>
-        <li class="nav-item" role="presentation">
-          <button class="nav-link" id="class-tab" data-bs-toggle="tab" data-bs-target="#class" type="button" role="tab" aria-controls="class" aria-selected="false">Class</button>
-        </li>
-        <li class="nav-item" role="presentation">
-          <button class="nav-link" id="equipment-tab" data-bs-toggle="tab" data-bs-target="#equipment" type="button" role="tab" aria-controls="equipment" aria-selected="false">Equipment</button>
-        </li>
-      </ul>
-      <div class="tab-content" id="myTabContent">
-        <div class="tab-pane fade show active" id="race" role="tabpanel" aria-labelledby="race-tab"> 
-            <form id="form1"action="">
-            <select class="form-select"name="" id="raza">
 
-                <option selected>Choose a race</option>
-                <option  value="dragonborn">Dragonborn</option>
-                <option value="dwarf">Dwarf</option>
-                <option value="elf">Elf</option>
-                <option value="gnome">Gnome</option>
-                <option value="halfling">Halfling</option>
-                <option value="half-orc">Half-Orc</option>
-                <option value="human">Human</option>
-                <option value="tiefling">Tiefling</option>
-                    
-            </select>
+            </form>
+            
+            <div id="resultado_raza"></div>
+            <div id="resultado_dados"></div>
+                <form action="">
 
 
-            <select class="form-select" name="" id="subraza">
+                    <div class=" col ">
+                        <label class="form-label" for="str">Strength (STR):
+                            <div class="row " id="at0">
 
-                <option selected>Choose a subrace</option>        
-            </select>
-            <!---
-            <label for="str">STR:</label>
-            <input type="number" id="str">
-            <label for="dex">DEX:</label>
-            <input type="number" id="dex">
-            <label for="con">CON:</label>
-            <input type="number" id="con">
-            <label for="int">INT:</label>
-            <input type="number" id="int">
-            <label for="wis">WIS:</label>
-            <input type="number" id="wis">
-            <label for="cha">CHA:</label>
-            <input type="number" id="cha">
-                -->
+                                <select   class="form-select atributos " name="0"  id="die-str" >  </select> +
+                               
+                            </div>
 
-        </form>
-        </div>
-        <div class="tab-pane fade" id="class" role="tabpanel" aria-labelledby="class-tab">...</div>
-        <div class="tab-pane fade" id="equipmen" role="tabpanel" aria-labelledby="equipment-tab">...</div>
-      </div>
+                        </label>
+                        
+                    </div>
+
+                    <div class="col">
+                        <label class="form-label" for="dex">Dexterity (DEX):
+                            <div class="row" id="at1">
+
+                                <select  class="form-select atributos"  id="die-dex" name="1">  </select> +
+
+                                
+                            </div>
+
+                        </label> 
+                    </div>
+                    <div class="col">
+                        <label class="form-label" for="con">Constitution (CON):
+                            <div class="row "id="at2">
+
+                                <select  class="form-select atributos"  id="die-con" name="2">  </select> +
+                            
+                            </div>
+
+                        </label> 
+                    </div>
+                    <div class="col">
+                        <label class="form-label" for="int">Intelligence (INT):
+                            <div class="row" id="at3">
+
+                                <select  class="form-select atributos"  id="die-int" name="3">  </select> +
+                                
+                            </div>
+
+                        </label> 
+                    </div>
+                    <div class="col">
+                        <label class="form-label" for="wis">Wisdom  (WIS):
+                            <div class="row" id="at4">
+
+                                <select  class="form-select atributos"  id="die-wis" name="4">  </select> +
+                                
+                            </div>
+
+                        </label> 
+                    </div>
+                    <div class="col">
+                        <label class="form-label" for="cha">Charisma (CHA):
+                            <div class="row"id="at5">
+
+                                <select  class="form-select atributos"  id="die-cha" name="5">  </select> +
+                                
+                            </div>
+
+                        </label> 
+
+                    </div>
+                    <div class="col">
+                        <input type="button" id="ready" name="ready" value="Ready">
+                        
+                    </div>
+                    <button id="cargar_datos" type="button" class="btn btn-primary">Cargar Datos</button>
+                </form>
+            </div>
+            <div class="tab-pane fade" id="class" role="tabpanel" aria-labelledby="class-tab">...</div>
+            <div class="tab-pane fade" id="equipmen" role="tabpanel" aria-labelledby="equipment-tab">...</div>
+            </div>
 
 
-           
+            
         </div>
         <div class="container-fluid uno  bordes">
 
         </div>
 
-    
-</div>
+    </div>
 
-
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="main.js"></script>
+        
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="main.js"></script>
 </body>
 </html>
