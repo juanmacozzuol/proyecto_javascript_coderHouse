@@ -625,6 +625,8 @@ subraza.onchange =() =>{
 
 document.getElementById('ready').onclick = function() 
 {
+
+    if (valu>=1){
     document.getElementById("raza").setAttribute("disabled","disabled");
     document.getElementById("subraza").setAttribute("disabled","disabled");
     document.getElementById("die-str").setAttribute("disabled","disabled");
@@ -665,6 +667,12 @@ document.getElementById('ready').onclick = function()
   let resultado6 ="<p class='col'>=" +sum6+ "</p>";
   document.getElementById("at5").innerHTML+=resultado6;
     enviarDatos();
+    }
+    else{
+
+        alert("Roll dice first!");
+
+    }
     
 }
 
@@ -681,10 +689,13 @@ function enviarDatos() {
 }
 
 function cargarDatos() {
+
+
     
     var datos = JSON.parse(localStorage.getItem("datos_formulario"));
     document.getElementById("raza").removeAttribute("disabled");
     document.getElementById("subraza").removeAttribute("disabled");
+    document.getElementById('cargar_datos').setAttribute("disabled","disabled");
     document.getElementById("raza").value = datos[0];
     document.getElementById("subraza").value = datos[1];
 
@@ -726,7 +737,7 @@ function cargarDatos() {
     }
 
     let titulo3 = document.createElement("h3");
-    titulo3.innerHTML="Subraza:" +datos[1]
+    titulo3.innerHTML="Subraza:" +datos[1];
     let pestaña1 = document.getElementById("resultado_raza");
     pestaña1.appendChild(titulo3);
 
@@ -754,8 +765,7 @@ function rolled()
     let stat = document.createElement("p");
 
     if (valu>=1){
-        /*let elemento= document.getElementsByTagName("p");
-        elemento[0].parentNode.removeChild(elemento[0]);*/
+
         alert("You already rolled!");
 
     }
