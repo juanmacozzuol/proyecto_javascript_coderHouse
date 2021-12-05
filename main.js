@@ -198,7 +198,7 @@ function stats(race)
         
     {
         
-        case "dragonborn":
+        case "Dragonborn":
             
 
             character1.raza="Dragonborn";
@@ -210,7 +210,7 @@ function stats(race)
 
             for (let subraza of subracedr){
 
-                contenido += "<option value= '"+subraza.toLowerCase()+"'  >" +subraza+ "</option>" ;
+                contenido += "<option value= '"+subraza+"'  >" +subraza+ "</option>" ;
             }
             contenido += "</select>";
             document.getElementById("subraza").innerHTML=contenido;
@@ -218,7 +218,7 @@ function stats(race)
             race_traits="<p><b>Race Traits:</b><ul><li>Draconic Ancestry</li><li>Breath Weapon</li><li>Damage Resistance</li><li>Languages: Common & Draconic</li></ul></p>";
         break;
         
-        case "dwarf":
+        case "Dwarf":
             
             
             character1.raza="Dwarf";
@@ -231,7 +231,7 @@ function stats(race)
 
             for (let subraza of subraced){
 
-                contenido += "<option value= '"+subraza.toLowerCase()+"'  >" +subraza+ "</option>" ;
+                contenido += "<option value= '"+subraza+"'  >" +subraza+ "</option>" ;
             }
             contenido += "</select>";
             document.getElementById("subraza").innerHTML=contenido;
@@ -240,7 +240,7 @@ function stats(race)
         break;
         
 
-        case "elf":
+        case "Elf":
 
             character1.raza="Elf";
             let subracee=["High Elf","Wood Elf","Dark Elf","Sin Subraza"];
@@ -251,7 +251,7 @@ function stats(race)
 
             for (let subraza of subracee){
 
-                contenido += "<option value= '"+subraza.toLowerCase()+"'  >" +subraza+ "</option>" ;
+                contenido += "<option value= '"+subraza+"'  >" +subraza+ "</option>" ;
             }
             contenido += "</select>";
             document.getElementById("subraza").innerHTML=contenido;
@@ -260,7 +260,7 @@ function stats(race)
         break;
         
 
-        case "gnome":
+        case "Gnome":
 
             character1.raza="Gnome";
             let subraceg=["Forest Gnome","Rock Gnome","Sin Subraza"];
@@ -271,7 +271,7 @@ function stats(race)
 
             for (let subraza of subraceg){
 
-                contenido += "<option value= '"+subraza.toLowerCase()+"'  >" +subraza+ "</option>" ;
+                contenido += "<option value= '"+subraza+"'  >" +subraza+ "</option>" ;
             }
             contenido += "</select>";
             document.getElementById("subraza").innerHTML=contenido;
@@ -280,7 +280,7 @@ function stats(race)
         break;
         
 
-        case "halfling":
+        case "Halfling":
 
             character1.raza="Halfling";
             let subraceh=["Lightfoot Halfling","Stout Halfling","Sin Subraza"];
@@ -291,7 +291,7 @@ function stats(race)
 
             for (let subraza of subraceh){
 
-                contenido += "<option value= '"+subraza.toLowerCase()+"'  >" +subraza+ "</option>" ;
+                contenido += "<option value= '"+subraza+"'  >" +subraza+ "</option>" ;
            
             }
             contenido += "</select>";
@@ -302,7 +302,7 @@ function stats(race)
         break;
         
 
-        case "half-orc":
+        case "Half-orc":
             character1.raza="Half-Orc";
             let subraceha=["Sin Subraza"];
             var contenido;
@@ -311,7 +311,7 @@ function stats(race)
 
             for (let subraza of subraceha){
 
-                contenido += "<option value= '"+subraza.toLowerCase()+"'  >" +subraza+ "</option>" ;
+                contenido += "<option value= '"+subraza+"'  >" +subraza+ "</option>" ;
             }
             contenido += "</select>";
             document.getElementById("subraza").innerHTML=contenido;
@@ -320,7 +320,7 @@ function stats(race)
         break;
         
 
-        case "human":
+        case "Human":
             character1.raza="Human";
 
             let subracehu=["Sin Subraza"];
@@ -330,7 +330,7 @@ function stats(race)
 
             for (let subraza of subracehu){
 
-                contenido += "<option value= '"+subraza.toLowerCase()+"'  >" +subraza+ "</option>" ;
+                contenido += "<option value= '"+subraza+"'  >" +subraza+ "</option>" ;
             }
             contenido += "</select>";
             document.getElementById("subraza").innerHTML=contenido;
@@ -339,7 +339,7 @@ function stats(race)
         break;
         
 
-        case "tiefling":
+        case "Tiefling":
             character1.raza="Tiefling";
             let subracet=["Sin Subraza"];
             var contenido;
@@ -348,7 +348,7 @@ function stats(race)
 
             for (let subraza of subracet){
 
-                contenido += "<option value= '  " + subraza.toLowerCase() + " '  >" +subraza+ "</option>" ;
+                contenido += "<option value= '  " + subraza + " '  >" +subraza+ "</option>" ;
             }
             contenido += "</select>";
             document.getElementById("subraza").innerHTML=contenido;
@@ -436,80 +436,80 @@ subraza.onchange =() =>{
     let subraza= document.getElementById("subraza").value;
  
     character1.atributos_raza=[0,0,0,0,0,0];
-
+    
     switch(subraza){
-
-        case "hill dwarf":
+        
+        case "Hill Dwarf":
             character1.atributos_raza[2]=2;
             character1.atributos_raza[4]=1;
             character1.subraza="Hill Dwarf";
             
         break;
 
-        case "mountain dwarf":
+        case "Mountain Dwarf":
             character1.atributos_raza[2]=2;
             character1.atributos_raza[0]=2;
             character1.subraza="Mountain Dwarf";
 
         break;
 
-        case "underdark dwarf":
+        case "Underdark Dwarf":
             character1.atributos_raza[2]=2;
             character1.atributos_raza[0]=1;
             character1.subraza="Underdark Dwarf";
 
         break;
 
-        case "high elf":
+        case "High Elf":
             character1.atributos_raza[1]=2;
             character1.atributos_raza[3]=1;
             character1.subraza="High Elf";
 
         break;
 
-        case "wood elf":
+        case "Wood elf":
             character1.atributos_raza[1]=2;
             character1.atributos_raza[4]=1;
             character1.subraza="Wood Elf";
 
         break;
 
-        case "dark elf":
+        case "Dark elf":
             character1.atributos_raza[1]=2;
             character1.atributos_raza[5]=1;
             character1.subraza="Dark Elf";
 
         break;
 
-        case "forest gnome":
+        case "Forest Gnome":
             character1.atributos_raza[3]=2;
             character1.atributos_raza[1]=1;
             character1.subraza="Forest Gnome";
 
         break;
 
-        case "rock gnome":
+        case "Rock Gnome":
             character1.atributos_raza[3]=2;
             character1.atributos_raza[2]=1;
             character1.subraza="Rock Gnome";
 
         break;
 
-        case "lightfoot halfling":
+        case "Lightfoot Halfling":
             character1.atributos_raza[1]=2;
             character1.atributos_raza[5]=1;
             character1.subraza="Lightfoot Halfling";
 
         break;
 
-        case "stout halfling":
+        case "Stout Halfling":
             character1.atributos_raza[1]=2;
             character1.atributos_raza[2]=1;
             character1.subraza="Stout Halfling";
 
         break;
 
-        case "sin subraza":
+        case "Sin Subraza":
 
             character1.subraza="N/A";
            
@@ -735,19 +735,16 @@ function cargarDatos() {
     document.getElementById("raza").removeAttribute("disabled");
     document.getElementById("subraza").removeAttribute("disabled");
     document.getElementById('cargar_datos').setAttribute("disabled","disabled");
-    document.getElementById("raza").value = datos[0];
-    document.getElementById("subraza").value = datos[1];
+
    
-    console.log(datos[0]);
-    console.log(datos[1]);
-    console.log(datos[2]);
+ 
     $("#stats").empty();
    $("#stats").append("<p> STR:"+datos[2][0]+"(" + parseInt((datos[2][0]-10)/2)+")</p>" );
-   $("#stats").append("<p> STR:"+datos[2][1]+"(" + parseInt((datos[2][1]-10)/2)+")</p>" );
-   $("#stats").append("<p> STR:"+datos[2][2]+"(" + parseInt((datos[2][2]-10)/2)+")</p>" );
-   $("#stats").append("<p> STR:"+datos[2][3]+"(" + parseInt((datos[2][3]-10)/2)+")</p>" );
-   $("#stats").append("<p> STR:"+datos[2][4]+"(" + parseInt((datos[2][4]-10)/2)+")</p>" );
-   $("#stats").append("<p> STR:"+datos[2][5]+"(" + parseInt((datos[2][5]-10)/2)+")</p>" );
+   $("#stats").append("<p> DEX:"+datos[2][1]+"(" + parseInt((datos[2][1]-10)/2)+")</p>" );
+   $("#stats").append("<p> CON:"+datos[2][2]+"(" + parseInt((datos[2][2]-10)/2)+")</p>" );
+   $("#stats").append("<p> INT:"+datos[2][3]+"(" + parseInt((datos[2][3]-10)/2)+")</p>" );
+   $("#stats").append("<p> WIS:"+datos[2][4]+"(" + parseInt((datos[2][4]-10)/2)+")</p>" );
+   $("#stats").append("<p> CHA:"+datos[2][5]+"(" + parseInt((datos[2][5]-10)/2)+")</p>" );
    $("#additional-data").empty();
    $("#additional-data").append("<p> <b>Speed:</b> "+ datos[3]  +"</p>");
    $("#additional-data").append(datos[4]);
