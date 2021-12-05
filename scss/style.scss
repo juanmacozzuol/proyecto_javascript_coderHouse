@@ -1,20 +1,33 @@
+*{
+
+   padding: 0px;
+   margin: 0px;
+}
+
+html, body {
+   margin: 0;
+   height: 100%;
+}
+
 .bordes{
-    border: red 1px solid;
+    border: black 1px dotted;
 }
 .uno{
 width:500px;
-height: 800px;
+
 }
 
-/*
 .papyrus{
    background-image: url("../images/papyrus.jpg");
+   background-repeat: no-repeat;
+   background-size:cover;
+
 }
 .forest{
-    background-image: url("../images/forest.jpg");
+    background-image: url("../images/pexels-pixabay-220182.jpg");
     background-repeat: no-repeat;
     background-size:cover;
-}*/
+}
 
 .atributos{
 width: 70px;
@@ -34,3 +47,4 @@ p, ul, li{
 
     font-size: 16px;
  }
+

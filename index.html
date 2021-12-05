@@ -6,26 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="mycss/mycss.css">
-    
-    <title>Clase 5</title>
+    <link rel="icon" href="images/icosahedron.png">
+    <title>Character Generator</title>
+
 
 </head>
 <body class="container-fluid forest">
         
-    <div class="container-fluid row bordes  ">
-        <h1>Character Generator </h1>
+    <div class="container-fluid row  bordes  ">
+        <h1 class="text-center">Character Generator </h1>
+       
         <div class="container-fluid  uno  bordes papyrus" id="pestañas">
-        <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
             <li class="nav-item" role="presentation">
             <button class="nav-link active" id="race-tab" data-bs-toggle="tab" data-bs-target="#race" type="button" role="tab" aria-controls="race" aria-selected="true">Race & Attributes</button>
             </li>
             <li class="nav-item" role="presentation">
             <button class="nav-link" id="class-tab" data-bs-toggle="tab" data-bs-target="#class" type="button" role="tab" aria-controls="class" aria-selected="false">Class</button>
             </li>
-            <li class="nav-item" role="presentation">
-            <button class="nav-link" id="equipment-tab" data-bs-toggle="tab" data-bs-target="#equipment" type="button" role="tab" aria-controls="equipment" aria-selected="false">Equipment</button>
-            </li>
-        </ul>
+            
+             </ul>
         <div class="tab-content " id="myTabContent">
             <div class="tab-pane fade show active " id="race" role="tabpanel" aria-labelledby="race-tab"> 
                 <form id="form1"action="" >
@@ -52,7 +52,7 @@
 
             </form>
             
-            <div id="resultado_raza"></div>
+            
             <div id="resultado_dados"></div>
                 <form action="">
 
@@ -122,7 +122,8 @@
 
                     </div>
                     <div class="col">
-                        <input type="button" id="ready" name="ready" value="Ready">
+                        <input type="checkbox" id="ready" name="ready" value="Ready"> 
+                        <label for="ready">Ready</label>
                         
                     </div>
                     <button id="cargar_datos" type="button" class="btn btn-primary">Cargar Datos</button>
@@ -154,21 +155,34 @@
 
 
             </div>
-            <div class="tab-pane fade" id="equipmen" role="tabpanel" aria-labelledby="equipment-tab">...</div>
+
             </div>
 
 
             
         </div>
-        <div id="imagen" class="container-fluid uno  bordes">
+
+        <div id="ajax" class="container-fluid  uno  bordes papyrus ">
+            <div class=" bordes" id="resultado_raza"></div>
+            <div class="bordes" id="resultado_clase"></div>
+            <div class="row">
+            <div class="col bordes" id="stats"></div>
+            <div class="col bordes" id="additional-data">  </div>
+        </div>
+        </div>
+        <div id="imagen" class="container-fluid uno  bordes papyrus ">
 
         </div>
 
     </div>
 
+
+
         
-        <script src="js/bootstrap.bundle.min.js"></script>
+        
         <script src="jquery.min.js"></script>
+        <script src="js/bootstrap.bundle.min.js"></script>
         <script src="main.js"></script>
+
 </body>
 </html>
