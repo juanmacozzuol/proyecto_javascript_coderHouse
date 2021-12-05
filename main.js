@@ -385,10 +385,10 @@ raza.onchange =() =>{
     if(val[1]==1)
 
     {
-        let element= document.getElementsByTagName("h4");
-        element[0].parentNode.removeChild(element[0]);
+        /*let element= document.getElementsByTagName("h4");
+        element[0].parentNode.removeChild(element[0]);*/
         val[1]=0;
-        
+        $("#resultado_raza").empty();
         $("#additional-data").empty();
         $("#additional-data").append("<p> <b>Speed:</b> "+ speed  +"</p>");
         $("#additional-data").append(race_traits);
@@ -399,9 +399,9 @@ raza.onchange =() =>{
     {   
         if(val[0]==1){
 
-            let element= document.getElementsByTagName("h2");
-            element[0].parentNode.removeChild(element[0]);
-           
+            /*let element= document.getElementsByTagName("h2");
+            element[0].parentNode.removeChild(element[0]);*/
+            $("#resultado_raza").empty();
          
             
                 $("#atr0").remove();
@@ -654,7 +654,7 @@ subraza.onchange =() =>{
 
 document.getElementById('ready').onclick = function() 
 {
-
+    $("#stats").empty();
     if (valu>=1){
     document.getElementById("raza").setAttribute("disabled","disabled");
     document.getElementById("subraza").setAttribute("disabled","disabled");
@@ -666,28 +666,30 @@ document.getElementById('ready').onclick = function()
     document.getElementById("die-cha").setAttribute("disabled","disabled");
     document.getElementById('ready').setAttribute("disabled","disabled");
   let r1 =  document.getElementById("die-str");
-  let sum1 =parseInt(r1.options[r1.selectedIndex].innerHTML) + character1.atributos_raza[0];
+  var sum1 =parseInt(r1.options[r1.selectedIndex].innerHTML) + character1.atributos_raza[0];
 
 
   let r2 =  document.getElementById("die-dex");
-  let sum2 =parseInt(r2.options[r2.selectedIndex].innerHTML) + character1.atributos_raza[1];
+  var sum2 =parseInt(r2.options[r2.selectedIndex].innerHTML) + character1.atributos_raza[1];
 
 
   let r3 =  document.getElementById("die-con");
-  let sum3 =parseInt(r3.options[r3.selectedIndex].innerHTML) + character1.atributos_raza[2];
+  var sum3 =parseInt(r3.options[r3.selectedIndex].innerHTML) + character1.atributos_raza[2];
 
 
   let r4 =  document.getElementById("die-int");
-  let sum4 =parseInt(r4.options[r4.selectedIndex].innerHTML) + character1.atributos_raza[3];
+  var sum4 =parseInt(r4.options[r4.selectedIndex].innerHTML) + character1.atributos_raza[3];
 
 
   let r5 =  document.getElementById("die-wis");
-  let sum5 =parseInt(r5.options[r5.selectedIndex].innerHTML) + character1.atributos_raza[4];
+  var sum5 =parseInt(r5.options[r5.selectedIndex].innerHTML) + character1.atributos_raza[4];
 
 
 
   let r6 =  document.getElementById("die-cha");
-  let sum6 =parseInt(r6.options[r6.selectedIndex].innerHTML) + character1.atributos_raza[5];
+  var sum6 =parseInt(r6.options[r6.selectedIndex].innerHTML) + character1.atributos_raza[5];
+
+  var sum=[sum1,sum2,sum3,sum4,sum5,sum6]
 
         $("#stats").append("<p> STR:"+sum1+"(" + parseInt((sum1-10)/2) +")</p>" );
         $("#stats").append("<p> DEX:"+sum2 +"(" + parseInt((sum2-10)/2) +")</p>");
@@ -695,14 +697,16 @@ document.getElementById('ready').onclick = function()
         $("#stats").append("<p> INT:"+sum4 +"(" + parseInt((sum4-10)/2) +")</p>");
         $("#stats").append("<p> WIS:"+sum5 +"(" + parseInt((sum5-10)/2) +")</p>");
         $("#stats").append("<p> CHA:"+sum6 +"(" + parseInt((sum6-10)/2) +")</p>");
+
         
 
 
-    enviarDatos();
+    enviarDatos(sum);
     }
     else{
 
         alert("Roll dice first!");
+        $("#ready").prop("checked",false);
 
     }
     
@@ -714,15 +718,18 @@ document.getElementById('ready').onclick = function()
 document.getElementById("cargar_datos").addEventListener("click", cargarDatos);
 
 //enviarDatos y cargarDatos son las dos funciones de JSON para guardar y traer data local, honestamente las puse porque lo decia el desafio pero no planeo usarlas en el final
-function enviarDatos() {
+function enviarDatos(sum) {
     var razalc = document.getElementById("raza").value;
     var subrazalc = document.getElementById("subraza").value;
-    localStorage.setItem("datos_formulario", JSON.stringify([razalc, subrazalc]));
+    var final_stats =sum;
+    localStorage.setItem("datos_formulario", JSON.stringify([razalc, subrazalc, final_stats,speed,race_traits]));
+    
 }
 
 function cargarDatos() {
 
-bpress=1;
+    bpress=1;
+
     
     var datos = JSON.parse(localStorage.getItem("datos_formulario"));
     document.getElementById("raza").removeAttribute("disabled");
@@ -730,6 +737,22 @@ bpress=1;
     document.getElementById('cargar_datos').setAttribute("disabled","disabled");
     document.getElementById("raza").value = datos[0];
     document.getElementById("subraza").value = datos[1];
+   
+    console.log(datos[0]);
+    console.log(datos[1]);
+    console.log(datos[2]);
+    $("#stats").empty();
+   $("#stats").append("<p> STR:"+datos[2][0]+"(" + parseInt((datos[2][0]-10)/2)+")</p>" );
+   $("#stats").append("<p> STR:"+datos[2][1]+"(" + parseInt((datos[2][1]-10)/2)+")</p>" );
+   $("#stats").append("<p> STR:"+datos[2][2]+"(" + parseInt((datos[2][2]-10)/2)+")</p>" );
+   $("#stats").append("<p> STR:"+datos[2][3]+"(" + parseInt((datos[2][3]-10)/2)+")</p>" );
+   $("#stats").append("<p> STR:"+datos[2][4]+"(" + parseInt((datos[2][4]-10)/2)+")</p>" );
+   $("#stats").append("<p> STR:"+datos[2][5]+"(" + parseInt((datos[2][5]-10)/2)+")</p>" );
+   $("#additional-data").empty();
+   $("#additional-data").append("<p> <b>Speed:</b> "+ datos[3]  +"</p>");
+   $("#additional-data").append(datos[4]);
+   
+
 
     if(val[0]==1){
 
@@ -748,13 +771,13 @@ bpress=1;
 
     }
 
-
-    
     let titulo2 = document.createElement("h2");
     titulo2.innerHTML="Raza:" +datos[0];
     let pestaña = document.getElementById("resultado_raza");
     pestaña.appendChild(titulo2);
     val[0]=1;
+    
+
 
     if(val[1]==1){
 
@@ -773,7 +796,7 @@ bpress=1;
     let pestaña1 = document.getElementById("resultado_raza");
     pestaña1.appendChild(titulo3);
 
-    document.getElementById("die-str").removeAttribute("disabled");
+   document.getElementById("die-str").removeAttribute("disabled");
     document.getElementById("die-dex").removeAttribute("disabled");
     document.getElementById("die-con").removeAttribute("disabled");
     document.getElementById("die-int").removeAttribute("disabled");
@@ -1039,7 +1062,7 @@ switch(clase_elegida){
         $("#savingt").append("<p>Strength & Dexterity</p>");
         $("#armorp").append("<p>Light and medium armor</p>");
         $("#weaponp").append("<p>Shields, simple and martial weapons</p>");
-        $("#features").append("<p><b>Favored Enemy:</b>Beginning at 1st level, you have significant experience studying, tracking, hunting, and even talking to a certain type of enemy. C hoose a type o f favored enemy: aberrations, beasts, celestials, constructs, dragons, elementals, fey, fiends, giants, monstrosities, oozes, plants, or undead. Alternatively, you can select two races of humanoid (such as gnolls and orc s) as favored enemies. You have advantage on W isdom (Survival) checks to track your favored enem ies, as w ell as on Intelligence checks to recall information about them. W hen you gain this feature, you also learn one language of your choice that is spoken by your favored enemies, if they speak one at all. You ch oose one additional favored enemy, as well as an associated language, at 6th and 14th level. As you gain levels, your choices should reflect the types of monsters you have encountered on your adventures.</p> <p><b>Natural Explorer:</b> You are particularly familiar with one type of natural environment and are adept at traveling and surviving in such regions. Choose one type of favored terrain: arctic, coast, desert, forest, grassland, mountain, swamp, or the Underdark. When you make an Intelligence or Wisdom check related to your favored terrain, your proficiency bonus is doubled if you are using a skill that you’re proficient in. While traveling for an hour or m ore in your favored terrain, you gain the following benefits:<ul><li>Difficult terrain doesn’t slow your group’s travel.</li><li>Your group can’t becom e lost except by magical means.</li><li>Even when you are engaged in another activity while traveling (such as foraging, navigating, or tracking), you remain alert to danger.</li><li>If you are traveling alone, you can move stealthily at a norm al pace.</li><li>When you forage, you find tw ice as much food as you normally would.</li><li>While tracking other creatures, you also learn their exact number, their sizes, and how long ago they passed through the area.</li></ul></p>");
+        $("#features").append("<p><b>Favored Enemy:</b>Beginning at 1st level, you have significant experience studying, tracking, hunting, and even talking to a certain type of enemy. C hoose a type o f favored enemy: aberrations, beasts, celestials, constructs, dragons, elementals, fey, fiends, giants, monstrosities, oozes, plants, or undead. Alternatively, you can select two races of humanoid (such as gnolls and orc s) as favored enemies. You have advantage on W isdom (Survival) checks to track your favored enem ies, as w ell as on Intelligence checks to recall information about them. W hen you gain this feature, you also learn one language of your choice that is spoken by your favored enemies, if they speak one at all. You choose one additional favored enemy, as well as an associated language, at 6th and 14th level. As you gain levels, your choices should reflect the types of monsters you have encountered on your adventures.</p> <p><b>Natural Explorer:</b> You are particularly familiar with one type of natural environment and are adept at traveling and surviving in such regions. Choose one type of favored terrain: arctic, coast, desert, forest, grassland, mountain, swamp, or the Underdark. When you make an Intelligence or Wisdom check related to your favored terrain, your proficiency bonus is doubled if you are using a skill that you’re proficient in. While traveling for an hour or m ore in your favored terrain, you gain the following benefits:<ul><li>Difficult terrain doesn’t slow your group’s travel.</li><li>Your group can’t becom e lost except by magical means.</li><li>Even when you are engaged in another activity while traveling (such as foraging, navigating, or tracking), you remain alert to danger.</li><li>If you are traveling alone, you can move stealthily at a norm al pace.</li><li>When you forage, you find tw ice as much food as you normally would.</li><li>While tracking other creatures, you also learn their exact number, their sizes, and how long ago they passed through the area.</li></ul></p>");
        if(first==0){
         $("#imagen").append("<img id='imgclass' class='d-block mx-auto'   style='display:none' src='" +fotos[7] +"'>")
         $("#imgclass").fadeIn(1000); 
@@ -1160,7 +1183,7 @@ switch(clase_elegida){
         method: "GET",
         url:  "datos.json",
         success: function(respuesta) {
-            let contenido = "<ol>";
+            let contenido = "<div class='ayuda container-fluid'><ol>";
             
             for (let datos of respuesta) {
                 contenido += "<li>";
@@ -1177,8 +1200,9 @@ switch(clase_elegida){
                 contenido += "</li>";
             }
 
-            contenido += "</ol>";
+            contenido += "</ol></div>";
             $("body").prepend(contenido);
+            $("#btn1").prop("disabled",true);
         },
         error: function(respuesta) {
             $("body").prepend(`<div><strong>Error!</strong> No se pudo enviar los datos!</div>`);

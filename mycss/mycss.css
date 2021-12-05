@@ -6,9 +6,9 @@ html, body {
   margin: 0;
   height: 100%; }
 
-.bordes {
-  border: black 1px dotted; }
-
+/*.bordes{
+    border: black 1px dotted;
+}*/
 .uno {
   width: 500px; }
 
@@ -33,3 +33,9 @@ p, ul, li {
 
 div h3 {
   font-size: 16px; }
+
+.ayuda {
+  background-color: black;
+  border: white 1px dotted;
+  color: white;
+  width: 500px; }
