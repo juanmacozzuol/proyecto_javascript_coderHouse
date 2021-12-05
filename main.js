@@ -467,14 +467,14 @@ subraza.onchange =() =>{
 
         break;
 
-        case "Wood elf":
+        case "Wood Elf":
             character1.atributos_raza[1]=2;
             character1.atributos_raza[4]=1;
             character1.subraza="Wood Elf";
 
         break;
 
-        case "Dark elf":
+        case "Dark Elf":
             character1.atributos_raza[1]=2;
             character1.atributos_raza[5]=1;
             character1.subraza="Dark Elf";
