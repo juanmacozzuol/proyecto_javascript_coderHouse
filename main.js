@@ -871,7 +871,7 @@ function ordenarStats(atributos=[]){
     atributos.sort(function(a,b){return b-a});
  }
 
-var fotos=["./images/Barbarian.png","./images/bard.png","./images/Cleric.png","./images/Druid.png","./images/Fighter.png","./images/Monk.png","./images/Paladin.png","./images/Ranger.png","./images/Rogue.png","./images/Sorcerer.png","./images/Warlock.png","./images/Wizard.png"];
+var fotos=["./images/Barbarian.png","./images/Bard.png","./images/Cleric.png","./images/Druid.png","./images/Fighter.png","./images/Monk.png","./images/Paladin.png","./images/Ranger.png","./images/Rogue.png","./images/Sorcerer.png","./images/Warlock.png","./images/Wizard.png"];
 var first =0;
  $("#clase").on("change",function(){
 
