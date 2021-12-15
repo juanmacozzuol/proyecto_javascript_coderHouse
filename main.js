@@ -704,8 +704,9 @@ document.getElementById('ready').onclick = function()
     enviarDatos(sum);
     }
     else{
+        $("#alert").remove();
+        $("#resultado_dados").append("<p id='alert' style='font-size:20px'>Roll the dice first!</p>")
 
-        alert("Roll dice first!");
         $("#ready").prop("checked",false);
 
     }
@@ -817,9 +818,9 @@ function rolled()
     let stat = document.createElement("p");
 
     if (valu>=1){
-
-        alert("You already rolled!");
-
+        $("#rolled").remove();
+        $("#resultado_dados").append("<p id='rolled' style='font-size:20px'>You already rolled!</p>")
+       
     }
 
     else{
@@ -856,7 +857,7 @@ function rolled()
         document.getElementById("die-int").innerHTML=contenido;
         document.getElementById("die-wis").innerHTML=contenido;
         document.getElementById("die-cha").innerHTML=contenido;
-
+        $("#alert").remove();
         stat.innerHTML="DICE:" + valores[0] + "," + valores[1] + "," + valores[2] + "," + valores[3] + "," + valores[4] + "," + valores[5];
         let pestaña3 = document.getElementById("resultado_dados");
         pestaña3.appendChild(stat);
